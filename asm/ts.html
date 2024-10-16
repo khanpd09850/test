@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - Sữa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .product-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        .thumbnail:hover, .thumbnail.selected {
+            border-color: #007bff;
+        }
+        .alert {
+            display: none;
+        }
+        .btn-primary {
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+        .quantity-selector {
+            width: 70px;
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container product-container">
+        <div class="row">
+            <div class="col-md-6">
+                <img id="main-image" src="277176074_338753635036881_515103218165387099_n-1.jpg" alt="Trà sữa" class="product-image mb-3">
+                <div>
+                    <img class="thumbnail selected" src="cach-lam-tra-sua-matcha-1.jpg" alt="Hình thu nhỏ 1" data-large="cach-lam-tra-sua-matcha-1.jpg">
+                    <img class="thumbnail" src="th.jpg" alt="Hình thu nhỏ 2" data-large="th.jpg">
+                    <img class="thumbnail" src="277176074_338753635036881_515103218165387099_n-1.jpg" alt="Hình thu nhỏ 3" data-large="277176074_338753635036881_515103218165387099_n-1.jpg">
+                </div>
+            </div>
+            <div class="col-md-6 product-details">
+                <h2>Trà sữa</h2>
+                <p class="text-success">25.000 ₫</p>
+                <p>Trà sữa tươi ngon, giàu dinh dưỡng giúp tăng cường sức khỏe và phát triển.<a href="#">Xem thêm</a></p>
+            
+                <h5>Loại</h5>
+                <select id="tea-type" class="form-control">
+                    <option value="trà sữa truyền thống">Trà sữa truyền thống</option>
+                    <option value="trà sữa matcha">Trà sữa matcha</option>
+                    <option value="trà sữa socola">Trà sữa socola</option>
+                    <option value="trà sữa trái cây">Trà sữa trái cây</option>
+                </select>
+            
+                <h5>Size</h5>
+                <select id="size-options" class="form-control">
+                    <option value="nhỏ">Nhỏ</option>
+                    <option value="vừa">Vừa</option>
+                    <option value="lớn">Lớn</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mt-3">
+            <label for="quantity" class="form-label"><strong>Số lượng:</strong></label>
+            <input type="number" id="quantity" class="form-control quantity-selector" value="1" min="1">
+        </div>
+
+        <div class="alert alert-warning mt-3" id="alert">
+            Vui lòng chọn số lượng trước khi thêm vào giỏ hàng.
+        </div>
+
+        <button class="btn btn-primary mt-3" id="add-to-cart">Thêm vào giỏ hàng</button>
+
+        <div class="mt-4">
+            <p><strong>SKU:</strong> N/A</p>
+            <p><strong>Thương hiệu:</strong> Milk tea</p>
+            <a href="#">Xem tất cả chi tiết</a>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 Công Ty Trà sữa Việt Nam.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('add-to-cart').addEventListener('click', function () {
+            const quantity = document.getElementById('quantity').value;
+            if (quantity < 1) {
+                document.getElementById('alert').style.display = 'block';
+            } else {
+                document.getElementById('alert').style.display = 'none';
+                alert('Sản phẩm đã được thêm vào giỏ hàng với số lượng: ' + quantity);
+            }
+        });
+
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('main-image');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function () {
+                thumbnails.forEach(thumb => thumb.classList.remove('selected'));
+                const largeImage = this.getAttribute('data-large');
+                mainImage.src = largeImage; // Đảm bảo đường dẫn đúng
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>

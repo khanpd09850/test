@@ -1,0 +1,133 @@
+body {  
+    font-family: Arial, sans-serif;  
+    line-height: 1.6;  
+    margin: 0;  
+    overflow-x: hidden;  
+}  
+
+header {  
+    background-color: #f8f9fa;  
+    border-bottom: 1px solid #e9ecef;  
+}  
+
+.header-right a {  
+    margin-left: 15px;  
+    color: #007bff;  
+    text-decoration: none;  
+}  
+
+.header-right a:hover {  
+    text-decoration: underline;  
+}  
+
+.navbar {  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+}  
+
+.navbar .nav-link {  
+    color: #495057;  
+}  
+
+.navbar .nav-link:hover {  
+    color: #007bff;  
+}  
+
+.carousel-item img {  
+    height: 400px;  
+    object-fit: cover;  
+    width: 100%;  
+}  
+
+.gt {  
+    background-color: #f0f0f0;  
+    padding: 10px 0;  
+    font-size: 16px;  
+    white-space: nowrap;  
+}  
+
+.nav-justify-content-center {  
+    margin-top: 20px;  
+}  
+
+.nav-link.bg-danger {  
+    border-radius: 50px;  
+}  
+
+.nav-link.bg-danger:hover {  
+    background-color: #c82333;  
+}  
+
+.line {  
+    text-align: center;  
+    margin: 30px 0;  
+}  
+
+.lined-heading {  
+    position: relative;  
+    font-size: 24px;  
+}  
+
+.lined-heading span {  
+    padding: 10px 20px;  
+    background: #fff;  
+}  
+
+.lined-heading::before,  
+.lined-heading::after {  
+    content: '';  
+    position: absolute;  
+    top: 50%;  
+    height: 1px;  
+    background: #007bff;  
+    width: 100px;  
+}  
+
+.lined-heading::before {  
+    left: 0;  
+    margin-left: -110px;  
+}  
+
+.lined-heading::after {  
+    right: 0;  
+    margin-right: -110px;  
+}  
+
+.product {  
+    border: 1px solid #e9ecef;  
+    padding: 15px;  
+    border-radius: 5px;  
+    background-color: #fff;  
+    transition: transform 0.3s;  
+}  
+
+.product:hover {  
+    transform: scale(1.05);  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+}  
+
+.product img {  
+    width: 100%;  
+    height: auto;  
+    border-radius: 5px;  
+}  
+
+.product h3 {  
+    font-size: 18px;  
+    margin-top: 10px;  
+}  
+
+.product p {  
+    display: none;  
+}  
+
+.product:hover p {  
+    display: block;  
+    font-size: 16px;  
+    color: #007bff;  
+    font-weight: bold;  
+}  
+
+.button {  
+    margin-top: 10px;  
+    width: 100%;  
+}  
